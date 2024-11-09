@@ -1,0 +1,36 @@
+package Giris;
+import java.lang.management.CompilationMXBean;
+import java.util.Scanner;
+public class EBOB_EKOK {
+    public static void main(String[] args) {
+        int n1,n2,x=1,y=1,ebob=1,ekok=1;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("n1 sayısını giriniz : ");
+        n1 = input.nextInt();
+
+        System.out.print("n2 sayısını giriniz : ");
+        n2 = input.nextInt();
+
+        do {
+            if ( n1 %x == 0 && n2 %x == 0) {
+                ebob = x;
+            }
+            x +=1;
+        }while(x <= Math.min(n1, n2));
+        System.out.println("Sayının EBOB'u = " + ebob);
+
+        do {
+            ekok = ebob *y;
+            if (ekok %n1 ==0 && ekok %n2 == 0){
+                System.out.println("Sayıların EKOK'u = " + ekok);
+            break;
+            }
+
+            y += 1;
+        }while(y <= n1*n2);
+
+    }
+
+}
